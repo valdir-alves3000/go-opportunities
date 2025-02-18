@@ -1,0 +1,29 @@
+name: Go Opportunities Actions
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**.go"
+      - "**.yml"
+      - "**.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup GO
+      uses: actions/setup-go@v3
+      with:
+        go-version-file: go.mod
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Run Unit Tests
+      run: go test ./test/unit/... 
