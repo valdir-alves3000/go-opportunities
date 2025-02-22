@@ -2,7 +2,6 @@
 
 [![Build Status](https://github.com/valdir-alves3000/go-opportunities/workflows/Go%20Opportunities%20Actions/badge.svg)](https://github.com/valdir-alves3000/go-opportunities/actions)
 
-
 ## Descrição
 Go Opportunities é uma aplicação desenvolvida em GoLang para gerenciamento de vagas de emprego. O projeto permite criar, buscar, atualizar e deletar vagas de trabalho, utilizando o GORM como ORM para interação com o banco de dados.
 
@@ -11,6 +10,7 @@ Go Opportunities é uma aplicação desenvolvida em GoLang para gerenciamento de
 - GORM
 - SQLite
 - Testes com Testify
+- Swagger para documentação
 
 ## Instalação
 1. Clone o repositório:
@@ -23,8 +23,26 @@ Go Opportunities é uma aplicação desenvolvida em GoLang para gerenciamento de
    go mod tidy
    ```
 
-## Testes
-Os testes unitários estão implementados na pasta `test/unit`. Para rodar os testes, utilize:
+## Execução
+Para iniciar a aplicação, execute:
 ```sh
-go test ./unit/...
+ go run cmd/main.go
 ```
+
+## Testes
+Os testes unitários estão implementados na pasta `test/unit` e os testes de integração estão na pasta `test/e2e`.
+Para rodar os testes unitários, utilize:
+```sh
+ go test ./test/unit/...
+```
+Para rodar os testes de integração:
+```sh
+ go test ./test/e2e/...
+```
+
+## Documentação
+A documentação da API foi gerada com Swagger. Para acessá-la, execute a aplicação e acesse:
+```
+http://localhost:8080/swagger/index.html
+```
+
