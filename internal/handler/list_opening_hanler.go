@@ -23,7 +23,7 @@ import (
 func (h *OpeningHandler) List(c *gin.Context) {
 	page, err := strconv.Atoi(c.DefaultQuery("page", "0"))
 	if err != nil {
-		sendError(c, http.StatusBadRequest, "Invalid page number")
+		sendError(c, http.StatusBadRequest, "invalid page number")
 		return
 	}
 

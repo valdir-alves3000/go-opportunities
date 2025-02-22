@@ -38,7 +38,7 @@ func TestListOpeningUsecase(t *testing.T) {
 
 		assert.Equal(t, http.StatusBadRequest, w.Code)
 		assert.Nil(t, err)
-		assert.Equal(t, "Invalid page number", resp.Message)
+		assert.Equal(t, "invalid page number", resp.Message)
 		assert.Equal(t, resp.ErrorCode, w.Code)
 
 		mockUseCase.AssertNotCalled(t, "List", mock.Anything, mock.Anything)
