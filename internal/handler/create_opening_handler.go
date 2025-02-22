@@ -45,6 +45,6 @@ func (h *OpeningHandler) Create(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusCreated, gin.H{
-		"message": fmt.Sprintf("Opening %s created successfully", req.Role),
+		"message": fmt.Sprintf("opening %s created successfully", req.Role),
 	})
 }
